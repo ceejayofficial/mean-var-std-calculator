@@ -22,7 +22,7 @@ class UnitTests(unittest.TestCase):
         actual = calculate(input_data)
 
         for key in expected_output:
-            for i in range(2):
+            for i in range(2):  # column and row axes
                 for a, b in zip(actual[key][i], expected_output[key][i]):
                     self.assertAlmostEqual(a, b, delta=0.1, msg=f"{key} axis {i} value mismatch: {a} != {b}")
             self.assertAlmostEqual(actual[key][2], expected_output[key][2], delta=0.1, msg=f"{key} flat value mismatch")
